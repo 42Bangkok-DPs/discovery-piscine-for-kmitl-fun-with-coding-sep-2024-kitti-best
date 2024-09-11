@@ -2,10 +2,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #121212;
 }
 select {
+    color: #ccaa99;
     width: 300px;
     height: 60px;
     font-size: x-large;
-    border-radius: 10px;
+    border: none;
+    background-color: #121212;
+}
+select:focus {
+    border: none;
+} 
+option {
+    color: white;
 }
