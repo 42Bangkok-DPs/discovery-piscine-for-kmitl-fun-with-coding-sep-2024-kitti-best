@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calc</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <form action="javascript:;" onsubmit="calculate(this)">
+    <form action="javascript:;">
         <input type="text" id="a" name="a">
         <select name="op" id="op">
             <option value="+">+</option>
@@ -19,18 +20,20 @@
         <button type="submit">Try me!</button>
     </form>
     <script>
-        function calculate(form){
+        $("form").submit(function(form){
             let message = "Error :(";
-            let a = form.a.value;
-            let b = form.b.value;
-            let op = form.op.value;
+            let a = form.currentTarget.a.value;
+            let b = form.currentTarget.b.value;
+            let op = form.currentTarget.op.value;
             if (a.includes(".") || b.includes(".")){
                 console.log(message);
                 alert(message);
                 return;
             }
-            a = parseInt(form.a.value);
-            b = parseInt(form.b.value);
+            a = parseInt(form.currentTarget.a.value);
+            b = parseInt(form.currentTarget.b.value);
+            console.log(b);
+            console.log(isNaN(b));
             if(isNaN(a) || isNaN(b) || a < 0 || b < 0){
                 message = "Error :(";
             } else if ((op == "%" || op == "/") && b == 0){
@@ -47,8 +50,8 @@
             }
             console.log(message);
             alert(message);
-        }
-        setInterval(() => alert("Please, user me..."), 30000);
-    </script>
+        });
+        // setInterval(() => alert("Please, user me..."), 30000);
+        </script>
 </body>
 </html>
