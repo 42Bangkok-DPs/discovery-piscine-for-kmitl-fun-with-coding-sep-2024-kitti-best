@@ -27,19 +27,20 @@
             let op = form.currentTarget.op.value;
             a = a.trim();
             b = b.trim();
-            if (a.includes(".") || b.includes(".") 
-             || a.includes(" ") || b.includes(" ")
-             || a.includes("+") || b.includes("+")
+            if (a.includes(" ") || b.includes(" ")
+             || a === "" || b === ""
             ){
                 console.log(message);
                 alert(message);
                 return;
             }
-            a = parseInt(form.currentTarget.a.value);
-            b = parseInt(form.currentTarget.b.value);
+            a = Number(form.currentTarget.a.value);
+            b = Number(form.currentTarget.b.value);
             console.log(b);
             console.log(isNaN(b));
-            if(isNaN(a) || isNaN(b) || a < 0 || b < 0){
+            if(isNaN(a) || isNaN(b) 
+            || a < 0 || b < 0
+            || !Number.isInteger(a) || !Number.isInteger(b)){
                 message = "Error :(";
             } else if ((op == "%" || op == "/") && b == 0){
                 message = "It’s over 9000!"
@@ -56,7 +57,7 @@
             console.log(message);
             alert(message);
         });
-        setInterval(() => alert("Please, user me..."), 30000);
+        setInterval(() => alert("Please, use me..."), 30000);
         </script>
 </body>
 </html>
