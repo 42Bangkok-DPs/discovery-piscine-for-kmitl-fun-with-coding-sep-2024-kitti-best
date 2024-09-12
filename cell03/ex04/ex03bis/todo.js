@@ -1,7 +1,12 @@
+var decoder = new TextDecoder();
+var encoder = new TextEncoder();
+
 function get_todo() {
     let todos = [];
     try {
-        todo_list = JSON.parse(document.cookie);
+        console.log(new Uint8Array(document.cookie.split(',')));
+        cookie = decoder.decode(new Uint8Array(document.cookie.split(',')));
+        todo_list = JSON.parse(cookie);
         if(document.cookie != "") todos = todo_list;
     } catch (error) {
         console.log("No todo!");
@@ -10,7 +15,8 @@ function get_todo() {
 }
 
 function set_todo(todos) {
-    document.cookie = JSON.stringify(todos);
+    todos = JSON.stringify(todos);
+    document.cookie = encoder.encode(todos);
 }
 
 function createTodo(){
