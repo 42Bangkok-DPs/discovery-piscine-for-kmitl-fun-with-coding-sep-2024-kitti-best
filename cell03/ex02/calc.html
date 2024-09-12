@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+</head>
+<body>
+    <form action="javascript:;" onsubmit="calculate(this)">
+        <input type="text" id="a" name="a">
+        <select name="op" id="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="b" name="b">
+        <button type="submit">Try me!</button>
+    </form>
+    <script>
+        function calculate(form){
+            let message = "Error :(";
+            let a = form.a.value;
+            let b = form.b.value;
+            let op = form.op.value;
+            if (a.includes(".") || b.includes(".")){
+                console.log(message);
+                alert(message);
+                return;
+            }
+            a = parseInt(form.a.value);
+            b = parseInt(form.b.value);
+            if(isNaN(a) || isNaN(b) || a < 0 || b < 0){
+                message = "Error :(";
+            } else if ((op == "%" || op == "/") && b == 0){
+                message = "It’s over 9000!"
+            } else {
+                switch(op){
+                    case "+": message = a + b; break;
+                    case "-": message = a - b; break;
+                    case "*": message = a * b; break;
+                    case "/": message = a / b; break;
+                    case "%": message = a % b; break;
+                    default: message = "Error :(";
+                }
+            }
+            console.log(message);
+            alert(message);
+        }
+    </script>
+</body>
+</html>
