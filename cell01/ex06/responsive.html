@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <head>
-
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+        table {
+            height: 100%;
+            width:100%;
+        }
+        th[class^="box"] {
+            width:50%;
+            text-align: left;
+            height: 100px;
+            border: 1px solid black;
+        }
+        th.box-1 {
+            background-color: wheat;
+        }
+        th.box-2 {
+            background-color: darksalmon;
+        }
+    </style>
 </head>
-<body style="margin: 0;">
-    <div class="container" style="display: flex; width: 100%; height: 100vh;">
-        <div class="l-box" style="background-color: cornsilk; width: 50%; display: flex; align-items: center; border:1px solid black;">
-            <div>This is text 1</div>
-        </div>
-        <div class="r-box" style="background-color: darksalmon; width: 50%; display: flex; align-items: center; border:1px solid black;">
-            <div>This is text 2</div>
-        </div>
-    </div>
+<body style="width: 100vw;">
+    <table>
+        <thead>
+            <tr>
+                <th class="box-1" colspan="1">
+                    First Cell
+                </th>
+                <th class="box-2" colspan="1">
+                    Second Cell
+                </th>
+            </tr>
+        </thead>
+    </table>
 </body>
