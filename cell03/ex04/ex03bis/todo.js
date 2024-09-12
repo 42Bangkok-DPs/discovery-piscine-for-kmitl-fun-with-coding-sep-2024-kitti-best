@@ -26,19 +26,19 @@ function createTodo(){
 }
 
 function showTodo(){
-    let todo_list_html = document.getElementById("ft-list");
+    let todo_list_html = $("#ft-list");
     let todo_list_children = [];
     let todos = get_todo();
-    todo_list_html.innerHTML = '';
+    todo_list_html.html('');
     todos.forEach((todo, i) => {
-        let todo_item_html = document.createElement("div");
-        todo_item_html.innerText = todo;
-        todo_item_html.setAttribute("class", "todo");
-        todo_item_html.addEventListener("mousedown", ()=>remove(i));
+        let todo_item_html = $("<div></div>");
+        todo_item_html.html(todo);
+        todo_item_html.addClass("todo");
+        todo_item_html.on("mousedown", ()=>remove(i));
         todo_list_children.push(todo_item_html);
     });
     todo_list_children.reverse().forEach((todo)=>{
-        todo_list_html.appendChild(todo);
+        todo_list_html.append(todo);
     });
 }
 
