@@ -27,7 +27,10 @@
             let op = form.currentTarget.op.value;
             a = a.trim();
             b = b.trim();
-            if (a.includes(".") || b.includes(".") || a.includes(" ") || b.includes(" ")){
+            if (a.includes(".") || b.includes(".") 
+             || a.includes(" ") || b.includes(" ")
+             || a.includes("+") || b.includes("+")
+            ){
                 console.log(message);
                 alert(message);
                 return;
