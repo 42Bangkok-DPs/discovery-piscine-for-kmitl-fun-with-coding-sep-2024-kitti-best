@@ -79,12 +79,16 @@ var contact2 = [
 ]
 var data = {
     best: { 
+        name: "Kittipan Onlay",
+        intro: "A computer engineering student at KMITL, Thailand.<br> Interested in algorithm, procedural generations and graphic programming.",
         proj: proj1,
         profileImage: "images/best/profile.jpg",
         contact: contact1,
         game: game1
     },
     paul: { 
+        name: "Krittanaputch Choopinij",
+        intro: "A computer engineering student at KMITL, Thailand.<br> Interested in sleeping all day, memes and cat.",
         proj: proj2,
         profileImage: "images/paul/profile_image.png",
         contact: contact2,
@@ -138,6 +142,16 @@ function updateGame() {
     });
 }
 
+function updateIntro(){
+    $(".greeting").html("");
+    $(".greeting").append(
+        $(`<h1>${data[cur_person].name}</h1>`)
+    );
+    $(".greeting").append(
+        $(`<p>${data[cur_person].intro}</p>`)
+    );
+}
+
 function togglePage(person) {
     if (person === "best") {
         $(".best").show();
@@ -147,7 +161,8 @@ function togglePage(person) {
         $(".paul").show();
     }
     cur_person = person;
-    cur_proj = 0;  
+    cur_proj = 0;
+    updateIntro();
     updateShowcase();
     updateProfileImage(); 
     updateContact();
