@@ -169,7 +169,7 @@ function togglePage(person) {
     updateGame();
 }
 
-setInterval(updateShowcase, 1000);
+setInterval(updateShowcase, 3000);
 
 $("#best-btn").click(function() {
     togglePage("best");
@@ -194,5 +194,6 @@ function start(){
     })
 }
 
+$("html")
 start();
 togglePage(cur_person);
