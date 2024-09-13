@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("animation.css");
+@import url("variables.css");
+body {
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans";
+}
+img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+/* Main */
+.best, .paul {
+    height: 100vh;
+}
+.row {
+    height: 100%;
+}
+.main-con {
+    border: none;
+    height: 100%;
+    margin-left: 270px;
+    transition: all 0.4s ease-in-out;
+}
+.side-nav-con {
+    position: relative;
+}
+.side-nav {
+    padding: var(--page-padding);
+    height: calc(100vh - 15px);
+    position: fixed;
+    width: 240px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease-in-out;
+}
+.side-nav > p {
+    font-size: 1.5rem;
+}
+.nav-title {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+.side-nav a {
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+.side-nav button {
+    height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    background-color: white;
+    font-size: 1.5rem;
+}
+div[class^="page"]{
+    padding: var(--page-padding);
+    height: calc(100vh - 2 * var(--page-padding));
+}
+/* Page 1 */
+.page-1 {
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 40% 60%;
+}
+.page-1 > .top {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.greeting > h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+.greeting > p {
+    font-size: 1.5rem;
+}
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.proj-showcase {
+    border: 1px solid black;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.proj-showcase > p {
+    z-index: 1;
+    position: absolute;
+    display: none;
+    color: white;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+.proj-showcase > .black-block {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+.proj-showcase:hover > p{
+    font-size: 1.5rem;
+    display: block;
+}
+.proj-showcase:hover > img{
+    display: block;
+}
+.proj-showcase:hover > .black-block{
+    background-color: rgba(0, 0, 0, 0.35);
+}
+/* Page 2 */
+.page-2 {
+    height: auto !important;
+}
+div[class^="contact-"] {
+    margin-top: 40px;
+}
+.contacts p {
+    margin: 0;
+    font-size: 1.7rem;
+    font-style: italic;
+}
+.contacts a {
+    color: black;
+    font-size: 3rem;
+    text-decoration: none;
+}
+.social-image {
+    width: 400px;
+    height: 200px;
+}
+/* page 3 */
+.games {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.games > .left {
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+.games .top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.games .top div[class^="game-"]{
+    padding: 5px;
+}
+div[class^="game-"] .image-container {
+    width: 100%;
+    max-height: 500px;
+}
+.games p {
+    font-size: 1.7rem;
+}
