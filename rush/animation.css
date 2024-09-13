@@ -1,0 +1,31 @@
+@keyframes running_color {
+    0% {
+        color: #FFDC19;
+    }
+    20% {
+        color: #A600FF;
+    }
+    40% {
+        color: #0DB0FF;
+    }
+    60% {
+        color: #1CFF0D;
+    }
+    80% {
+        color:#E8420C ;
+    }
+    100% {
+        color: #FFDC19;
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

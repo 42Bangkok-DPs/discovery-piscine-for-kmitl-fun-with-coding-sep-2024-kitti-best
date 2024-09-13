@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("animation.css");
 @import url("variables.css");
+html {
+    scroll-behavior: smooth;
+}
 body {
     color: black;
     margin: 0;
@@ -11,6 +14,46 @@ img {
     width: inherit;
     height: inherit;
     object-fit: cover;
+}
+/* The thing */
+.home p{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+.home {
+    width: 400%;
+    height: 400%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    position: relative;
+}
+.home div[class^="bg"] {
+    position: absolute;
+    background-size: contain;
+    width: 2500px;
+    height: 2500px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+.bg-1 {
+    background-image: url("images/bg/1.png");
+    /* animation: rotate 4s infinite linear; */
+}
+.bg-2 {
+    background-image: url("images/bg/2.png");
+    /* animation: rotate 7s infinite linear; */
+}
+.bg-3 {
+    background-image: url("images/bg/3.png");
+    /* animation: rotate 6s infinite linear; */
+}
+.bg-4 {
+    background-image: url("images/bg/4.png");
+    /* animation: rotate 5s infinite linear; */
 }
 /* Main */
 .best, .paul {
@@ -34,9 +77,13 @@ img {
     position: fixed;
     width: 240px;
     border: 1px solid black;
-    display: flex;
-    flex-direction: column;
     transition: all 0.4s ease-in-out;
+    background-color: white;
+}
+.homent {
+    height: 100%;
+    display: none;
+    flex-direction: column;
 }
 .side-nav > p {
     font-size: 1.5rem;
@@ -45,16 +92,32 @@ img {
     font-size: 4rem;
     margin-bottom: 0;
 }
-.side-nav a {
+.btn-list {
     margin-top: auto;
-    margin-bottom: 30px;
 }
 .side-nav button {
+    margin-bottom: 10px;
     height: 40px;
     border-radius: 20px;
     width: 100%;
     background-color: white;
     font-size: 1.5rem;
+    transition: all 0.1s ease-in-out;
+}
+.side-nav button:hover {
+    background-color: #FFDC19;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+}
+nav a {
+    margin: 6px !important;
+    color: black;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
 }
 div[class^="page"]{
     padding: var(--page-padding);
@@ -69,6 +132,11 @@ div[class^="page"]{
 .page-1 > .top {
     display: grid;
     grid-template-columns: 70% 30%;
+}
+.page-1 > .top > .right {
+    display: flex;
+    justify-self: center;
+    align-items: center;
 }
 .greeting > h1 {
     font-size: 4rem;
@@ -141,23 +209,21 @@ div[class^="contact-"] {
 .games {
     height: 100%;
     display: grid;
-    grid-template-columns: 60% 40%;
-}
-.games > .left {
-    display: grid;
     grid-template-rows: 80% 20%;
 }
 .games .top {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; */
 }
 .games .top div[class^="game-"]{
     padding: 5px;
 }
 div[class^="game-"] .image-container {
-    width: 100%;
-    max-height: 500px;
+    width: 400px;
+    height: 250px;
 }
 .games p {
     font-size: 1.7rem;
